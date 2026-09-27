@@ -24,10 +24,21 @@ def try_catch(text,key):
  except ValueError:
     print("not found")
 
+# 4. Using Nested loop
+def nested_loop(text,key):
+  for i in range(len(text)):
+    for j in range(len(key)):
+      if text[i+j] != key[j]:
+        break
+    else:
+      print("found at index",i)
+      return
+  print("not found")
+
+
 
 text="aman is a good boy"
-key="boy"  
+key="is"  
 
-
-try_catch(text,key)
+using_loop(text,key)
 # find_function(text,key)
