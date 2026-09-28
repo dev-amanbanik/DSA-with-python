@@ -1,22 +1,24 @@
-def quick_sort(arr):
+# when last element is pivot.
 
-    if len(arr) <= 1:
-        return arr
+def quick_sort(arr, low, high):
 
-    pivot = arr[0]
-
-    left = []
-    right = []
-
-    for x in arr[1:]:
-        if x < pivot:
-            left.append(x)
-        else:
-            right.append(x)
-
-    return quick_sort(left) + [pivot] + quick_sort(right)
+    if low < high:
+        p = partition(arr, low, high)
+        quick_sort(arr, low, p - 1)
+        quick_sort(arr, p + 1, high)
 
 
-arr = [50, 20, 70, 10, 40, 60, 30]
+def partition(arr, low, high):
+    pivot = arr[high]       
+    i = low - 1
+    for j in range(low, high):
+        if arr[j] < pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
 
-print(quick_sort(arr))
+
+arr = [6, 3, 8, 5, 2, 7,1,4,2,3]
+quick_sort(arr, 0, len(arr) - 1)
+print(arr)
