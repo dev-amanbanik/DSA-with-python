@@ -1,20 +1,21 @@
 def merge_sort(arr):
 # this function use for divide the array into two parts and then merge them in sorted order
-   start=0
-   end=len(arr)-1
+  if len(arr)<=1:
+    return arr
+  
+  start=0
+  end=len(arr)-1 
+  mid=start+(end-start)//2
 
-   if start<end:
-      mid=start+(end-start)//2
+  left=arr[start:mid+1]
+  right=arr[mid+1:end+1]
 
-      left=arr[start:mid+1]
-      right=arr[mid+1:end+1]
+  leftsort=merge_sort(left)
+  rightsort=merge_sort(right)
 
-      leftsort=merge_sort(left)
-      rightsort=merge_sort(right)
+  return merge(leftsort,rightsort)
 
-      return merge(leftsort,rightsort)
-
-   return arr
+   
 
 def merge(left, right):
 # this function use for merge the two sorted array into one sorted array
