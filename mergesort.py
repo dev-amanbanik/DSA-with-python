@@ -1,4 +1,5 @@
 def merge_sort(arr):
+# this function use for divide the array into two parts and then merge them in sorted order
    start=0
    end=len(arr)-1
 
@@ -16,6 +17,7 @@ def merge_sort(arr):
    return arr
 
 def merge(left, right):
+# this function use for merge the two sorted array into one sorted array
    result=[]
    i=0
    j=0
