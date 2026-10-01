@@ -1,17 +1,17 @@
-def QuickSort(arr,l,r):
+def QuickSort(arr,l,r):               # this function use for sorting using recursion and partitioning the array.
   if (l<r):
      p=partition(arr,l,r)
 
      QuickSort(arr,l,p-1)
      QuickSort(arr,p+1,r)
 
-def partition(arr,l,r):
+def partition(arr,l,r):     # this function use for partitioning the array and return the index of pivot element.
    pivot=arr[l]
    i=l+1
    j=r
 
    while True:                              # infinite while loop never terminate and not check any conditions.
-      while(i<= j and arr[i]<=pivot):         # jab tak condition true hoga i increment hote rahega.
+      while(i<= j and arr[i]<=pivot):       # jab tak condition true hoga i increment hote rahega.
         i=i+1
       while(i<=j and arr[j]>=pivot):
         j=j-1 
